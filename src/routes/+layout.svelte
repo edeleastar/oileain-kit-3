@@ -1,25 +1,31 @@
 <script lang="ts">
   import "../app.css";
-  import { AppBar } from "@skeletonlabs/skeleton-svelte";
-  import ArrowLeft from "lucide-svelte/icons/arrow-left";
-  import Paperclip from "lucide-svelte/icons/paperclip";
-  import Calendar from "lucide-svelte/icons/calendar";
-  import CircleUser from "lucide-svelte/icons/circle-user";
+  import { onMount } from "svelte";
+  import Header from "$lib/islands/Header.svelte";
+  import SideBar from "$lib/islands/SideBar.svelte";
+  import { oileainService } from "../lib/model/oileain-service";
+  import type { IslandGroup } from "../lib/model/oileain-types";
+
   let { children } = $props();
+
+  let allCoasts: IslandGroup[] = $state([]);
+  onMount(async () => {
+    allCoasts = await oileainService.getCoasts();
+  });
 </script>
 
-<AppBar background="bg-surface-100-800-token" classes="h-20 justify-center border-b-[1px] border-surface-200 dark:border-surface-700">
-  {#snippet lead()}
-    <ArrowLeft size={24} />
-  {/snippet}
-  {#snippet trail()}
-    <Paperclip size={20} />
-    <Calendar size={20} />
-    <CircleUser size={20} />
-  {/snippet}
-  {#snippet headline()}
-    <h2 class="h5">Oileain: Islands of Ireland</h2>
-  {/snippet}
-</AppBar>
+<Header />
 
-{@render children()}
+<div class="flex min-h-full flex-col">
+  <div class="max-w-8xl mx-auto w-full grow lg:flex xl:px-2">
+    <div class="flex-1 xl:flex">
+      <div class="px-4 py-6 sm:px-6 lg:pl-8 xl:flex-1 xl:pl-6">
+        <!-- <p class="h-[512px] bg-purple-500 p-4">Paragraph 3</p> -->
+        {@render children()}
+      </div>
+    </div>
+    <div class="shrink-0 border-t border-gray-200 px-4 py-6 sm:px-6 lg:w-72 lg:border-l lg:border-t-0 lg:pr-8 xl:pr-6">
+      <SideBar {allCoasts} />
+    </div>
+  </div>
+</div>
