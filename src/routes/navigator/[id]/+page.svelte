@@ -23,7 +23,7 @@
   <div>
     <IslandMap zoom={14} height={40} />
   </div>
-  <div style="height: 45vh; overflow-y: auto">
+  <div style="height: 42vh; overflow-y: auto">
     <IslandDescription />
   </div>
 </div>

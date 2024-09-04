@@ -1,63 +1,30 @@
 <script lang="ts">
   import { sharedIsland } from "$lib/model/shared-state";
+  import IslandLocation from "./IslandLocation.svelte";
 </script>
 
-<table class="table table-fixed caption-top">
-  <caption class="h3 pt-8">GPS-compatible</caption>
-  <tbody>
-    <tr>
-      <td>Latitude</td>
-      <td>{sharedIsland?.value?.coordinates.geo.lat}</td>
-    </tr>
-    <tr>
-      <td>Longitude</td>
-      <td>{sharedIsland?.value?.coordinates.geo.long}</td>
-    </tr>
-  </tbody>
-</table>
+<IslandLocation title="GPS Compatible" XName={"Latitude"} YName={"Longitude"} X={sharedIsland?.value?.coordinates.geo.lat} Y={sharedIsland?.value?.coordinates.geo.long} />
+<IslandLocation
+  title="Transverse Mercator"
+  XName={"Eastings"}
+  YName={"Northings"}
+  X={sharedIsland?.value?.coordinates.tmcGrid.eastings}
+  Y={sharedIsland?.value?.coordinates.tmcGrid.northings}
+/>
+<IslandLocation
+  title="Full Irish Grid"
+  XName={"Eastings"}
+  YName={"Northings"}
+  X={sharedIsland?.value?.coordinates.fullIrishGrid.eastings}
+  Y={sharedIsland?.value?.coordinates.fullIrishGrid.northings}
+/>
 
-<table class="table table-fixed caption-top">
-  <caption class="h3 pt-8">Transverse Mercator</caption>
-  <tbody>
-    <tr>
-      <td>Eastings</td>
-      <td>{sharedIsland?.value?.coordinates.tmcGrid.eastings}</td>
-    </tr>
-    <tr>
-      <td>Northings</td>
-      <td>{sharedIsland?.value?.coordinates.fullIrishGrid.northings}</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="table table-fixed caption-top">
-  <caption class="h3 pt-8">Full Irish Grid</caption>
-  <tbody>
-    <tr>
-      <td>Eastings</td>
-      <td>{sharedIsland?.value?.coordinates.fullIrishGrid.eastings}</td>
-    </tr>
-    <tr>
-      <td>Northings</td>
-      <td>{sharedIsland?.value?.coordinates.fullIrishGrid.northings}</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="table table-fixed caption-top">
-  <caption class="h3 pt-8">Irish Grid</caption>
-  <tbody>
-    <tr>
-      <td>Sheet</td>
-      <td>{sharedIsland?.value?.coordinates.irishGrid.sheet}</td>
-    </tr>
-    <tr>
-      <td>Eastings</td>
-      <td>{sharedIsland?.value?.coordinates.irishGrid.eastings}</td>
-    </tr>
-    <tr>
-      <td>Norhtings</td>
-      <td>{sharedIsland?.value?.coordinates.irishGrid.northings}</td>
-    </tr>
-  </tbody>
-</table>
+<IslandLocation
+  title="Irish Grid"
+  XName={"Sheet"}
+  YName={"Eastings"}
+  ZName={"Northings"}
+  X={sharedIsland?.value?.coordinates.irishGrid.sheet}
+  Y={sharedIsland?.value?.coordinates.irishGrid.eastings}
+  Z={sharedIsland?.value?.coordinates.irishGrid.northings}
+/>

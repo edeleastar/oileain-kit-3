@@ -33,7 +33,7 @@
   });
 </script>
 
-<div class="box" style="height: {height}vh">
+<div class="box-border border-4 p-4" style="height: {height}vh">
   <Map bind:instance options={{ center: [location.lat, location.lng], zoom: zoom }}>
     <ControlLayers>
       <MapLayers {defautLayer} />

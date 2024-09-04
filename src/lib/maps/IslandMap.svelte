@@ -22,7 +22,7 @@
   });
 </script>
 
-<div class="box" style="height: {height}vh">
+<div class="m-2 box-border border-4 p-4" style="height: {height}vh">
   {#if sharedMarker.value}
     <Map bind:instance options={{ center: [sharedMarker.value.location.lat, sharedMarker.value.location.lng], zoom: zoom }}>
       <ControlLayers>
