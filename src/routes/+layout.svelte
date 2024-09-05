@@ -20,7 +20,6 @@
   <div class="max-w-8xl mx-auto w-full grow lg:flex xl:px-2">
     <div class="flex-1 xl:flex">
       <div class="px-4 py-6 sm:px-6 lg:pl-8 xl:flex-1 xl:pl-6">
-        <!-- <p class="h-[512px] bg-purple-500 p-4">Paragraph 3</p> -->
         {@render children()}
       </div>
     </div>
