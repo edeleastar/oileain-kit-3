@@ -5,7 +5,7 @@
 
 <AppBar background="bg-surface-100-800-token" headlineClasses="sm:hidden" centerClasses="hidden sm:block  border-surface-200 dark:border-surface-700">
   {#snippet lead()}
-    <a target="_blank" href="https://github.com/edeleastar/oileain-kit-2">
+    <a target="_blank" href="https://github.com/edeleastar/oileain-kit-3">
       <div class="flex flex-col items-center">
         <div>
           <Icon icon="logos:github-octocat" width="60" />

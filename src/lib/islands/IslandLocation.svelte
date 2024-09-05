@@ -15,7 +15,7 @@
 <div class="m-2 box-border border-4 p-2">
   <div class="p-4">
     <table class="table table-fixed caption-bottom">
-      <caption class="pt-4">{title}</caption>
+      <caption class="italic">{title}</caption>
       <tbody>
         <tr>
           <td>{XName}</td>
