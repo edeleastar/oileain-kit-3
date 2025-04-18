@@ -3,7 +3,13 @@
   import IslandLocation from "./IslandLocation.svelte";
 </script>
 
-<IslandLocation title="GPS Compatible" XName={"Latitude"} YName={"Longitude"} X={sharedIsland?.value?.coordinates.geo.lat} Y={sharedIsland?.value?.coordinates.geo.long} />
+<IslandLocation
+  title="GPS Compatible"
+  XName={"Latitude"}
+  YName={"Longitude"}
+  X={sharedIsland?.value?.coordinates.geo.lat}
+  Y={sharedIsland?.value?.coordinates.geo.long}
+/>
 <IslandLocation
   title="Transverse Mercator"
   XName={"Eastings"}

@@ -23,7 +23,9 @@
         {@render children()}
       </div>
     </div>
-    <div class="shrink-0 border-t border-gray-200 px-4 py-6 sm:px-6 lg:w-72 lg:border-l lg:border-t-0 lg:pr-8 xl:pr-6">
+    <div
+      class="shrink-0 border-t border-gray-200 px-4 py-6 sm:px-6 lg:w-72 lg:border-t-0 lg:border-l lg:pr-8 xl:pr-6"
+    >
       <SideBar {allCoasts} />
     </div>
   </div>
